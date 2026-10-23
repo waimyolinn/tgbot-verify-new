@@ -20,6 +20,17 @@ def generate_psu_email(first_name, last_name):
     email = f"{first_name.lower()}.{last_name.lower()}{digits}@psu.edu"
     return email
 
+def generate_school_email(first_name, last_name, domain):
+    """
+    生成指定学校域名的邮箱
+    格式：firstName.lastName + 3-4位数字 @<domain>
+    """
+    digit_count = random.choice([3, 4])
+    digits = ''.join(str(random.randint(0, 9)) for _ in range(digit_count))
+    email = f"{first_name.lower()}.{last_name.lower()}{digits}@{domain.lower()}"
+    return email
+
+
 
 def generate_html(first_name, last_name, school_id='2565'):
     """
